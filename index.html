@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr-BE">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marc Dupont – Plombier à Louvain-la-Neuve et environs</title>
+<meta name="description" content="Plombier indépendant : dépannage, fuites, chauffe-eau, sanitaires. Intervention rapide en Brabant wallon.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=Barlow:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bleu: #12395A;
+    --bleu-clair: #E8F0F6;
+    --jaune: #F2C230;
+    --encre: #1A1F24;
+    --gris: #5B6670;
+    --blanc: #FFFFFF;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Barlow", Arial, sans-serif;
+    color: var(--encre);
+    background: var(--blanc);
+    line-height: 1.6;
+    font-size: 1.0625rem;
+  }
+  h1, h2, h3 { font-family: "Barlow Condensed", "Arial Narrow", sans-serif; line-height: 1.1; }
+  a { color: inherit; }
+  a:focus-visible { outline: 3px solid var(--jaune); outline-offset: 3px; }
+  .wrap { max-width: 64rem; margin: 0 auto; padding: 0 1.25rem; }
+
+  /* En-tête */
+  header { background: var(--bleu); color: var(--blanc); padding: 1rem 0; }
+  header .wrap { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
+  .logo { font-family: "Barlow Condensed", sans-serif; font-weight: 800; font-size: 1.5rem; }
+  header nav a { margin-left: 1.25rem; text-decoration: none; opacity: .85; }
+  header nav a:hover { opacity: 1; text-decoration: underline; }
+
+  /* Accueil : le numéro de téléphone est l'élément central */
+  .hero { background: var(--bleu); color: var(--blanc); padding: 3rem 0 4rem; }
+  .hero h1 { font-size: clamp(2rem, 5vw, 3.25rem); font-weight: 600; max-width: 22ch; }
+  .hero p { margin-top: 1rem; max-width: 46ch; opacity: .9; }
+  .tel {
+    display: inline-block; margin-top: 2rem;
+    background: var(--jaune); color: var(--encre);
+    font-family: "Barlow Condensed", sans-serif; font-weight: 800;
+    font-size: clamp(2.25rem, 8vw, 4.5rem); letter-spacing: .02em;
+    padding: .25rem 1.25rem; border-radius: 6px; text-decoration: none;
+  }
+  .tel:hover { filter: brightness(1.05); }
+  .hero small { display: block; margin-top: .75rem; opacity: .8; }
+
+  section { padding: 3.5rem 0; }
+  section h2 { font-size: 2.25rem; font-weight: 800; color: var(--bleu); margin-bottom: 1.5rem; }
+
+  /* Services */
+  .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 2rem 3rem; }
+  .services h3 { font-size: 1.4rem; font-weight: 600; border-left: 4px solid var(--jaune); padding-left: .75rem; }
+  .services p { color: var(--gris); margin-top: .35rem; padding-left: calc(.75rem + 4px); }
+
+  /* Zone et horaires */
+  .zone { background: var(--bleu-clair); }
+  .deux { display: grid; grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); gap: 2rem; }
+  .zone ul { list-style: none; columns: 2; }
+  .zone li { padding: .2rem 0; }
+  table { border-collapse: collapse; width: 100%; max-width: 24rem; }
+  td { padding: .35rem 0; border-bottom: 1px solid #c9d6e1; }
+  td:last-child { text-align: right; font-weight: 600; }
+
+  /* Contact */
+  .contact p { margin-bottom: .5rem; }
+  .contact a { font-weight: 600; }
+
+  footer { background: var(--encre); color: #b8c0c7; font-size: .9rem; padding: 1.5rem 0; }
+  footer p + p { margin-top: .25rem; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="logo">Marc Dupont Plomberie</div>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#zone">Zone</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <h1>Une fuite, un chauffe-eau en panne, une salle de bain à refaire ?</h1>
+    <p>Plombier indépendant en Brabant wallon depuis 12 ans. Je me déplace rapidement et je vous donne un prix avant de commencer.</p>
+    <a class="tel" href="tel:+32470123456">0470 12 34 56</a>
+    <small>Appelez ou envoyez un SMS, je vous réponds dans l'heure.</small>
+  </div>
+</div>
+
+<main>
+  <section id="services">
+    <div class="wrap">
+      <h2>Ce que je fais</h2>
+      <div class="services">
+        <div>
+          <h3>Dépannage et fuites</h3>
+          <p>Recherche et réparation de fuites, robinets, chasses d'eau, canalisations bouchées.</p>
+        </div>
+        <div>
+          <h3>Chauffe-eau et boilers</h3>
+          <p>Remplacement, détartrage et entretien de boilers électriques et au gaz.</p>
+        </div>
+        <div>
+          <h3>Salles de bain</h3>
+          <p>Installation de douches, baignoires, lavabos et WC, du raccordement à la finition.</p>
+        </div>
+        <div>
+          <h3>Rénovation</h3>
+          <p>Remplacement de tuyauteries anciennes, mise en conformité des installations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="zone" class="zone">
+    <div class="wrap deux">
+      <div>
+        <h2>Où j'interviens</h2>
+        <ul>
+          <li>Louvain-la-Neuve</li>
+          <li>Ottignies</li>
+          <li>Wavre</li>
+          <li>Court-Saint-Étienne</li>
+          <li>Mont-Saint-Guibert</li>
+          <li>Rixensart</li>
+          <li>Grez-Doiceau</li>
+          <li>Chastre</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Horaires</h2>
+        <table>
+          <tr><td>Lundi – vendredi</td><td>7h30 – 18h</td></tr>
+          <tr><td>Samedi</td><td>8h – 13h</td></tr>
+          <tr><td>Urgences</td><td>Sur appel</td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Me contacter</h2>
+      <p>Téléphone : <a href="tel:+32470123456">0470 12 34 56</a></p>
+      <p>E-mail : <a href="mailto:contact@dupont-plomberie.be">contact@dupont-plomberie.be</a></p>
+      <p>Devis gratuit sur simple demande.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Marc Dupont Plomberie – Rue de l'Exemple 1, 1348 Louvain-la-Neuve</p>
+    <p>N° d'entreprise (BCE) : BE 0123.456.789</p>
+  </div>
+</footer>
+
+</body>
+</html>
