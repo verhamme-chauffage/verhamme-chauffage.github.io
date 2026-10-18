@@ -3,20 +3,59 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Verhamme Chauffage – Plombier à Louvain-la-Neuve et environs</title>
-<meta name="description" content=" indépendant : dépannage, fuites, chauffe-eau, sanitaires. Intervention rapide en Brabant wallon.">
+<title>Verhamme Chauffage – Chauffagiste et plombier en Brabant wallon</title>
+<meta name="description" content="Chauffagiste et plombier indépendant : chaudières gaz et mazout, pompes à chaleur, boilers, salles de bain. Dépannage rapide en Brabant wallon, alentours et Bruxelles.">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<meta name="theme-color" content="#063A6E">
+<meta property="og:title" content="Verhamme Chauffage – Chauffagiste en Brabant wallon">
+<meta property="og:description" content="Chaudières, pompes à chaleur, boilers et sanitaires. Devis gratuit.">
+<meta property="og:image" content="logo-verhamme.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=Barlow:wght@400;600&display=swap" rel="stylesheet">
+
+<!-- Fiche entreprise pour Google (recherche locale) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HVACBusiness",
+  "name": "Verhamme Chauffage",
+  "image": "logo-verhamme.png",
+  "telephone": "+32496841791",
+  "email": "verhamme.chauffage@hotmail.be",
+  "vatID": "BE1018207614",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rue d'Enfer 33",
+    "postalCode": "1457",
+    "addressLocality": "Tourinnes-Saint-Lambert",
+    "addressCountry": "BE"
+  },
+  "areaServed": ["Brabant wallon", "Bruxelles"],
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+    "opens": "07:30", "closes": "18:00"
+  }]
+}
+</script>
+
 <style>
   :root {
-    --bleu: #12395A;
-    --bleu-clair: #E8F0F6;
-    --jaune: #F2C230;
-    --encre: #1A1F24;
-    --gris: #5B6670;
+    /* Couleurs reprises du logo */
+    --bleu: #063A6E;        /* le V */
+    --bleu-fonce: #042A52;
+    --bleu-eau: #1677C8;    /* la goutte */
+    --bleu-clair: #EAF2F9;
+    --rouge: #D8232A;       /* la flamme */
+    --rouge-vif: #F0282F;
+    --encre: #16202B;
+    --gris: #56616C;
     --blanc: #FFFFFF;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
   body {
     font-family: "Barlow", Arial, sans-serif;
     color: var(--encre);
@@ -26,74 +65,200 @@
   }
   h1, h2, h3 { font-family: "Barlow Condensed", "Arial Narrow", sans-serif; line-height: 1.1; }
   a { color: inherit; }
-  a:focus-visible { outline: 3px solid var(--jaune); outline-offset: 3px; }
-  .wrap { max-width: 64rem; margin: 0 auto; padding: 0 1.25rem; }
+  a:focus-visible { outline: 3px solid var(--rouge-vif); outline-offset: 3px; }
+  img { max-width: 100%; height: auto; display: block; }
+  .wrap { max-width: 66rem; margin: 0 auto; padding: 0 1.25rem; }
 
   /* En-tête */
-  header { background: var(--bleu); color: var(--blanc); padding: 1rem 0; }
-  header .wrap { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
-  .logo { font-family: "Barlow Condensed", sans-serif; font-weight: 800; font-size: 1.5rem; }
-  header nav a { margin-left: 1.25rem; text-decoration: none; opacity: .85; }
+  header {
+    background: var(--bleu); color: var(--blanc);
+    padding: .6rem 0; position: sticky; top: 0; z-index: 10;
+    box-shadow: 0 2px 10px rgba(0,0,0,.18);
+  }
+  header .wrap { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+  .logo img { height: 58px; width: auto; }
+  header nav { display: flex; align-items: center; gap: 1.25rem; }
+  header nav a { text-decoration: none; opacity: .88; font-weight: 600; }
   header nav a:hover { opacity: 1; text-decoration: underline; }
+  header nav .nav-tel {
+    background: var(--rouge); opacity: 1; padding: .4rem .9rem; border-radius: 6px;
+    font-family: "Barlow Condensed", sans-serif; font-size: 1.2rem; letter-spacing: .02em;
+  }
+  header nav .nav-tel:hover { background: var(--rouge-vif); text-decoration: none; }
 
-  /* Accueil : le numéro de téléphone est l'élément central */
-  .hero { background: var(--bleu); color: var(--blanc); padding: 3rem 0 4rem; }
+  /* Accueil */
+  .hero {
+    background:
+      radial-gradient(circle at 85% 30%, rgba(22,119,200,.35), transparent 55%),
+      linear-gradient(160deg, var(--bleu) 0%, var(--bleu-fonce) 100%);
+    color: var(--blanc); padding: 3.5rem 0 4rem;
+  }
+  .hero .wrap { display: grid; grid-template-columns: 1.5fr 1fr; gap: 2.5rem; align-items: center; }
   .hero h1 { font-size: clamp(2rem, 5vw, 3.25rem); font-weight: 600; max-width: 22ch; }
-  .hero p { margin-top: 1rem; max-width: 46ch; opacity: .9; }
+  .hero p { margin-top: 1rem; max-width: 46ch; opacity: .92; }
   .tel {
     display: inline-block; margin-top: 2rem;
-    background: var(--jaune); color: var(--encre);
+    background: var(--rouge); color: var(--blanc);
     font-family: "Barlow Condensed", sans-serif; font-weight: 800;
-    font-size: clamp(2.25rem, 8vw, 4.5rem); letter-spacing: .02em;
-    padding: .25rem 1.25rem; border-radius: 6px; text-decoration: none;
+    font-size: clamp(2.25rem, 8vw, 4.25rem); letter-spacing: .02em;
+    padding: .2rem 1.25rem; border-radius: 8px; text-decoration: none;
+    box-shadow: 0 6px 18px rgba(0,0,0,.25);
+    transition: background .15s, transform .15s;
   }
-  .tel:hover { filter: brightness(1.05); }
-  .hero small { display: block; margin-top: .75rem; opacity: .8; }
+  .tel:hover { background: var(--rouge-vif); transform: translateY(-2px); }
+  .hero small { display: block; margin-top: .75rem; opacity: .85; }
+  .atouts { list-style: none; display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; margin-top: 1.75rem; font-weight: 600; }
+  .atouts li::before { content: "✓"; color: #7FC3FF; margin-right: .4rem; }
+  .hero-logo img { width: 100%; max-width: 340px; margin-left: auto; filter: drop-shadow(0 10px 24px rgba(0,0,0,.35)); }
 
-  section { padding: 3.5rem 0; }
-  section h2 { font-size: 2.25rem; font-weight: 800; color: var(--bleu); margin-bottom: 1.5rem; }
+  section { padding: 4rem 0; }
+  section h2 { font-size: 2.25rem; font-weight: 800; color: var(--bleu); margin-bottom: 1.75rem; }
 
   /* Services */
-  .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 2rem 3rem; }
-  .services h3 { font-size: 1.4rem; font-weight: 600; border-left: 4px solid var(--jaune); padding-left: .75rem; }
-  .services p { color: var(--gris); margin-top: .35rem; padding-left: calc(.75rem + 4px); }
+  .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 1.25rem; }
+  .carte {
+    border: 1px solid #DCE6EF; border-radius: 10px; padding: 1.4rem 1.5rem;
+    border-top: 4px solid var(--bleu-eau);
+  }
+  .carte.chaud { border-top-color: var(--rouge); }
+  .carte h3 { font-size: 1.45rem; font-weight: 600; color: var(--bleu); }
+  .carte p, .carte ul { color: var(--gris); margin-top: .5rem; }
+  .carte ul { list-style: none; }
+  .carte li { padding: .15rem 0 .15rem 1.1rem; position: relative; }
+  .carte li::before {
+    content: ""; position: absolute; left: 0; top: .75em;
+    width: .45rem; height: .45rem; border-radius: 50%; background: var(--bleu-eau);
+  }
+  .carte.chaud li::before { background: var(--rouge); }
+
+  /* Carrousel des réalisations */
+  .realisations { padding-top: 0; }
+  .carrousel { position: relative; }
+  .piste {
+    display: flex; gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory;
+    scroll-behavior: smooth; border-radius: 10px; scrollbar-width: none;
+  }
+  .piste::-webkit-scrollbar { display: none; }
+  .piste figure {
+    flex: 0 0 100%; scroll-snap-align: start; position: relative;
+    border-radius: 10px; overflow: hidden; background: var(--bleu-clair);
+  }
+  .piste img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+  .piste figcaption {
+    position: absolute; left: 0; right: 0; bottom: 0; padding: 2rem 1.25rem .9rem;
+    color: var(--blanc); font-weight: 600;
+    background: linear-gradient(transparent, rgba(4,42,82,.85));
+  }
+  .fleche {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    width: 3rem; height: 3rem; border-radius: 50%; border: 0; cursor: pointer;
+    background: rgba(255,255,255,.92); color: var(--bleu); font-size: 1.6rem; line-height: 1;
+    box-shadow: 0 3px 10px rgba(0,0,0,.25);
+  }
+  .fleche:hover { background: var(--blanc); }
+  .fleche:focus-visible { outline: 3px solid var(--rouge-vif); }
+  .fleche.prec { left: .75rem; }
+  .fleche.suiv { right: .75rem; }
+  .points { display: flex; justify-content: center; gap: .5rem; margin-top: 1rem; }
+  .points button {
+    width: .75rem; height: .75rem; border-radius: 50%; border: 0; padding: 0; cursor: pointer;
+    background: #C3D3E2;
+  }
+  .points button[aria-current="true"] { background: var(--rouge); }
+  @media (min-width: 900px) {
+    .piste figure { flex-basis: calc(50% - .5rem); }
+  }
+
+  /* Avant / après */
+  .piste figure.paire { flex-basis: 100%; background: none; overflow: visible; }
+  .duo { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; max-width: 52rem; margin: 0 auto; }
+  .duo > div { position: relative; border-radius: 10px; overflow: hidden; background: var(--bleu-clair); }
+  .duo img { aspect-ratio: 3 / 4; }
+  .etiquette {
+    position: absolute; top: .75rem; left: .75rem; padding: .2rem .7rem; border-radius: 4px;
+    background: rgba(22,32,43,.85); color: var(--blanc);
+    font-family: "Barlow Condensed", sans-serif; font-weight: 800; font-size: 1.1rem; letter-spacing: .04em; text-transform: uppercase;
+  }
+  .etiquette.apres { background: var(--rouge); }
+  .paire figcaption {
+    position: static; background: none; color: var(--bleu); padding: .9rem 0 0;
+    text-align: center; font-size: 1.15rem;
+  }
+  #avant-apres .fleche { top: calc(50% - 1.5rem); }
+  @media (max-width: 760px) {
+    .duo { gap: .4rem; }
+    .etiquette { font-size: .9rem; top: .5rem; left: .5rem; }
+    #avant-apres .fleche { width: 2.5rem; height: 2.5rem; }
+  }
 
   /* Zone et horaires */
   .zone { background: var(--bleu-clair); }
-  .deux { display: grid; grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); gap: 2rem; }
-  .zone ul { list-style: none; columns: 2; }
+  .deux { display: grid; grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); gap: 2rem 3rem; }
+  .zone ul { list-style: none; }
+  .zone ul li { font-size: 1.2rem; font-weight: 600; }
   .zone li { padding: .2rem 0; }
   table { border-collapse: collapse; width: 100%; max-width: 24rem; }
-  td { padding: .35rem 0; border-bottom: 1px solid #c9d6e1; }
+  td { padding: .45rem 0; border-bottom: 1px solid #c9d6e1; }
   td:last-child { text-align: right; font-weight: 600; }
 
   /* Contact */
-  .contact p { margin-bottom: .5rem; }
-  .contact a { font-weight: 600; }
+  .contact p { margin-bottom: .6rem; }
+  .contact a { font-weight: 600; color: var(--bleu); }
+  .contact .devis { margin-top: 1rem; font-weight: 600; color: var(--rouge); }
 
-  footer { background: var(--encre); color: #b8c0c7; font-size: .9rem; padding: 1.5rem 0; }
+  footer { background: var(--encre); color: #b8c0c7; font-size: .9rem; padding: 1.75rem 0; }
   footer p + p { margin-top: .25rem; }
+
+  /* Bouton d'appel fixe sur mobile */
+  .appel-mobile { display: none; }
+
+  @media (max-width: 760px) {
+    .hero .wrap { grid-template-columns: 1fr; }
+    .hero-logo { display: none; }
+    header nav a:not(.nav-tel) { display: none; }
+    .logo img { height: 48px; }
+    .appel-mobile {
+      display: block; position: fixed; left: 0; right: 0; bottom: 0; z-index: 20;
+      background: var(--rouge); color: var(--blanc); text-align: center; text-decoration: none;
+      font-family: "Barlow Condensed", sans-serif; font-weight: 800; font-size: 1.4rem;
+      padding: .8rem; box-shadow: 0 -2px 10px rgba(0,0,0,.2);
+    }
+    footer { padding-bottom: 5rem; }
+  }
 </style>
 </head>
 <body>
 
 <header>
   <div class="wrap">
-    <div class="logo">Verhamme Chauffage</div>
+    <a class="logo" href="#"><img src="logo-verhamme.png" alt="Verhamme Chauffage" width="56" height="58"></a>
     <nav>
       <a href="#services">Services</a>
+      <a href="#realisations">Réalisations</a>
+      <a href="#avant-apres">Avant / après</a>
       <a href="#zone">Zone</a>
       <a href="#contact">Contact</a>
+      <a class="nav-tel" href="tel:+32496841791">0496 84 17 91</a>
     </nav>
   </div>
 </header>
 
 <div class="hero">
   <div class="wrap">
-    <h1>Une fuite, un chauffe-eau en panne, une salle de bain à refaire ?</h1>
-    <p>Plombier indépendant en Brabant wallon, je me déplace rapidement et je vous donne un prix avant de commencer.</p>
-    <a class="tel" href="tel:+32496841791">0496 84 17 91</a>
-    <small>Appelez ou envoyez un SMS, je vous réponds dans l'heure.</small>
+    <div>
+      <h1>Chaudière en panne, fuite d'eau ou pompe à chaleur à installer ?</h1>
+      <p>Chauffagiste et plombier indépendant en Brabant wallon. Je me déplace rapidement et je vous donne un prix avant de commencer.</p>
+      <a class="tel" href="tel:+32496841791">0496 84 17 91</a>
+      <small>Appelez ou envoyez un SMS, je vous réponds dans l'heure.</small>
+      <ul class="atouts">
+        <li>Devis gratuit</li>
+        <li>Prix annoncé avant travaux</li>
+        <li>Urgences sur appel</li>
+      </ul>
+    </div>
+    <div class="hero-logo">
+      <img src="logo-verhamme.png" alt="" width="340" height="355">
+    </div>
   </div>
 </div>
 
@@ -102,35 +267,122 @@
     <div class="wrap">
       <h2>Ce que je fais</h2>
       <div class="services">
-        <div>
-          <h3>Pompe à chaleur</h3>
-        <li>Mise en place</li>
-        <li>Climatisation</li>
-            </div>
-        <div>
-          <h3>Chauffe-eau et boilers</h3>
-          <p>Remplacement, détartrage et entretien de boilers électriques et au gaz.</p>
+        <div class="carte chaud">
+          <h3>Entretien et dépannage</h3>
+          <ul>
+            <li>Chaudières gaz</li>
+            <li>Chaudières mazout</li>
+            <li>Chauffe-eau et boilers</li>
+          </ul>
         </div>
-        <div>
-          <h3>Salles de bain</h3>
-          <p>Installation de douches, baignoires, lavabos et WC, du raccordement à la finition.</p>
-        </div>
-        <div>
-          <h3>Rénovation</h3>
-          <p>Totale neuve, ancienne, mise en conformité des installations.</li>
-        </div>
-        <div>
+        <div class="carte chaud">
           <h3>Nouvelle installation</h3>
-          <p>Remplacement chaudières gaz et mazout, mise en place nouvelle installation.</p>
+          <ul>
+            <li>Remplacement de chaudières gaz et mazout</li>
+            <li>Nouvelle installation de chauffage</li>
+          </ul>
         </div>
-        <div>
-          <h3>Entretien dépannage</h3>
-          <li> Chaudière gaz</li>
-          <li> Chaudière mazout</li>
-          <li> Chauffe-eau</li>
-          <li> Boiler</li>
+        <div class="carte">
+          <h3>Pompe à chaleur et climatisation</h3>
+          <ul>
+            <li>Installation de pompes à chaleur (boiler thermodynamique)</li>
+            <li>Installation de climatisations</li>
+          </ul>
+        </div>
+        <div class="carte">
+          <h3>Traitement de l'eau</h3>
+          <ul>
+            <li>Adoucisseurs au sel</li>
+            <li>Adoucisseurs au CO₂</li>
+            <li>Filtres</li>
+            <li>Eau de pluie</li>
+          </ul>
+        </div>
+        <div class="carte">
+          <h3>Salles de bain</h3>
+          <ul>
+            <li>Douches et baignoires</li>
+            <li>Lavabos et WC</li>
+            <li>Du raccordement à la finition</li>
+          </ul>
+        </div>
+        <div class="carte">
+          <h3>Rénovation</h3>
+          <ul>
+            <li>Rénovation complète, en neuf comme en ancien</li>
+            <li>Mise en conformité des installations</li>
+          </ul>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section id="realisations" class="realisations">
+    <div class="wrap">
+      <h2>Mes réalisations</h2>
+      <div class="carrousel" aria-roledescription="carrousel" aria-label="Photos de chantiers">
+        <!-- Pour ajouter une photo : copiez un bloc <figure>, changez l'image et la légende. -->
+        <div class="piste" tabindex="0">
+          <figure>
+            <img src="photos/chantier-1.jpg" alt="Radiateur déplacé avec ses nouvelles conduites" loading="lazy" width="1200" height="750">
+            <figcaption>Déplacement d'un radiateur</figcaption>
+          </figure>
+          <figure>
+            <img src="photos/chantier-2.jpg" alt="Chaudière gaz murale Vaillant" loading="lazy" width="1200" height="750">
+            <figcaption>Installation d'une chaudière gaz à condensation</figcaption>
+          </figure>
+          <figure>
+            <img src="photos/chantier-3.jpg" alt="Chaufferie avec chaudière, ballon d'eau chaude et collecteur de distribution" loading="lazy" width="1200" height="750">
+            <figcaption>Chaufferie complète : chaudière, ballon et collecteur</figcaption>
+          </figure>
+          <figure>
+            <img src="photos/chantier-4.jpg" alt="Adoucisseur et filtres à eau installés en cave" loading="lazy" width="1200" height="750">
+            <figcaption>Traitement de l'eau : adoucisseur et filtration</figcaption>
+          </figure>
+          <figure>
+            <img src="photos/chantier-5.jpg" alt="Corps de chauffe d'une chaudière ouvert et nettoyé" loading="lazy" width="1200" height="750">
+            <figcaption>Entretien et nettoyage d'une chaudière</figcaption>
+          </figure>
+        </div>
+        <button class="fleche prec" type="button" aria-label="Photo précédente">‹</button>
+        <button class="fleche suiv" type="button" aria-label="Photo suivante">›</button>
+      </div>
+      <div class="points" aria-label="Choisir une photo"></div>
+    </div>
+  </section>
+
+  <section id="avant-apres" class="realisations">
+    <div class="wrap">
+      <h2>Avant / après</h2>
+      <div class="carrousel" aria-roledescription="carrousel" aria-label="Photos avant et après travaux">
+        <!-- Pour ajouter une paire : copiez un bloc <figure class="paire"> et changez les deux images. -->
+        <div class="piste" tabindex="0">
+          <figure class="paire">
+            <div class="duo">
+              <div><img src="photos/avant-1.jpg" alt="Avant : Ancienne chaudière murale, capot ouvert" loading="lazy" width="600" height="800"><span class="etiquette">Avant</span></div>
+              <div><img src="photos/apres-1.jpg" alt="Après : Nouvelle chaudière gaz à condensation installée" loading="lazy" width="600" height="800"><span class="etiquette apres">Après</span></div>
+            </div>
+            <figcaption>Remplacement d'une chaudière gaz murale</figcaption>
+          </figure>
+          <figure class="paire">
+            <div class="duo">
+              <div><img src="photos/avant-2.jpg" alt="Avant : Ancienne chaudière et ancienne distribution" loading="lazy" width="600" height="800"><span class="etiquette">Avant</span></div>
+              <div><img src="photos/apres-2.jpg" alt="Après : Nouvelle chaudière, collecteurs et vase d'expansion" loading="lazy" width="600" height="800"><span class="etiquette apres">Après</span></div>
+            </div>
+            <figcaption>Remplacement de chaudière et nouvelle distribution</figcaption>
+          </figure>
+          <figure class="paire">
+            <div class="duo">
+              <div><img src="photos/avant-3.jpg" alt="Avant : Corps de chauffe encrassé avant entretien" loading="lazy" width="600" height="800"><span class="etiquette">Avant</span></div>
+              <div><img src="photos/apres-3.jpg" alt="Après : Corps de chauffe nettoyé après entretien" loading="lazy" width="600" height="800"><span class="etiquette apres">Après</span></div>
+            </div>
+            <figcaption>Nettoyage du corps de chauffe</figcaption>
+          </figure>
+        </div>
+        <button class="fleche prec" type="button" aria-label="Chantier précédent">‹</button>
+        <button class="fleche suiv" type="button" aria-label="Chantier suivant">›</button>
+      </div>
+      <div class="points" aria-label="Choisir un chantier"></div>
     </div>
   </section>
 
@@ -139,21 +391,15 @@
       <div>
         <h2>Où j'interviens</h2>
         <ul>
-          <li>Louvain-la-Neuve</li>
-          <li>Ottignies</li>
-          <li>Wavre</li>
-          <li>Court-Saint-Étienne</li>
-          <li>Mont-Saint-Guibert</li>
-          <li>Rixensart</li>
-          <li>Grez-Doiceau</li>
-          <li>Chastre</li>
+          <li>Brabant wallon et ses alentours</li>
+          <li>Bruxelles</li>
         </ul>
       </div>
       <div>
         <h2>Horaires</h2>
         <table>
           <tr><td>Lundi – vendredi</td><td>7h30 – 18h</td></tr>
-          <tr><td>Urgences</td><td>Sur appel</td></tr>
+          <tr><td>Week-end et jours fériés</td><td>Sur appel</td></tr>
         </table>
       </div>
     </div>
@@ -162,19 +408,71 @@
   <section id="contact" class="contact">
     <div class="wrap">
       <h2>Me contacter</h2>
-      <p>Téléphone : <a href="tel:+32496841791">0470 12 34 56</a></p>
-      <p>E-mail : <a href="mailto:verhamme.chauffage@hotmail.com">verhamme.chauffage@hotmail.be</a></p>
-      <p>Devis gratuit sur demande.</p>
+      <p>Téléphone : <a href="tel:+32496841791">0496 84 17 91</a></p>
+      <p>E-mail : <a href="mailto:verhamme.chauffage@hotmail.be">verhamme.chauffage@hotmail.be</a></p>
+      <p class="devis">Devis gratuit sur demande.</p>
     </div>
   </section>
 </main>
 
 <footer>
   <div class="wrap">
-    <p>Verhamme Chauffage – Rue d'enfer 33, 1457 Tourinnes-Saint-Lambert</p>
-    <p>N° d'entreprise (BCE) : BE1018207614 </p>
+    <p>Verhamme Chauffage – Rue d'Enfer 33, 1457 Tourinnes-Saint-Lambert</p>
+    <p>N° d'entreprise (BCE) : BE 1018.207.614</p>
   </div>
 </footer>
+
+<a class="appel-mobile" href="tel:+32496841791">📞 Appeler 0496 84 17 91</a>
+
+<script>
+  // Carrousels : flèches, points, et défilement automatique (pause au survol / au toucher)
+  document.querySelectorAll('.carrousel').forEach(function (carrousel) {
+    const piste = carrousel.querySelector('.piste');
+    const photos = [...piste.children];
+    const points = carrousel.nextElementSibling;
+    const pas = () => photos[0].getBoundingClientRect().width + 16;
+    const visibles = () => Math.max(1, Math.round(piste.clientWidth / pas()));
+    const indexActuel = () => Math.round(piste.scrollLeft / pas());
+    const dernier = () => photos.length - visibles();
+
+    function aller(i) {
+      if (i > dernier()) i = 0;
+      if (i < 0) i = dernier();
+      piste.scrollTo({ left: i * pas() });
+    }
+
+    photos.forEach((_, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.setAttribute('aria-label', 'Élément ' + (i + 1));
+      b.addEventListener('click', () => aller(i));
+      points.appendChild(b);
+    });
+
+    function majPoints() {
+      const actif = indexActuel();
+      [...points.children].forEach((b, i) => {
+        b.hidden = i > dernier();
+        b.setAttribute('aria-current', i === actif ? 'true' : 'false');
+      });
+    }
+
+    carrousel.querySelector('.fleche.prec').addEventListener('click', () => aller(indexActuel() - 1));
+    carrousel.querySelector('.fleche.suiv').addEventListener('click', () => aller(indexActuel() + 1));
+    piste.addEventListener('scroll', () => requestAnimationFrame(majPoints));
+    window.addEventListener('resize', majPoints);
+    majPoints();
+
+    let minuterie = null;
+    const delai = carrousel.closest('#avant-apres') ? 7000 : 5000;
+    const reduit = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const demarrer = () => { if (!reduit) minuterie = setInterval(() => aller(indexActuel() + 1), delai); };
+    const arreter = () => clearInterval(minuterie);
+    ['mouseenter', 'touchstart', 'focusin'].forEach(e => carrousel.addEventListener(e, arreter, { passive: true }));
+    ['mouseleave', 'focusout'].forEach(e => carrousel.addEventListener(e, () => { arreter(); demarrer(); }));
+    demarrer();
+  });
+</script>
 
 </body>
 </html>
